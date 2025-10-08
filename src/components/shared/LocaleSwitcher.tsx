@@ -37,10 +37,7 @@ export default function LocaleSwitcher() {
 
   return (
     <Select defaultValue={locale} onValueChange={onSelectChange}>
-      <SelectTrigger
-        className="shadow-none border-0 bg-transparent p-0"
-        disabled={isPending}
-      >
+      <SelectTrigger className="shadow-none border-0 bg-transparent p-0">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>

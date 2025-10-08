@@ -1,3 +1,4 @@
+import Container from './Container';
 import LocaleSwitcher from './LocaleSwitcher';
-
-export { LocaleSwitcher };
+import CurrencySwitcher from './СurrencySwitcher';
+export { Container, CurrencySwitcher, LocaleSwitcher };
