@@ -14,17 +14,15 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ className }) => {
-  const t = useTranslations('input');
+  const t = useTranslations();
   return (
     <header className={cn(className, 'bg-[var(--primary-blue)]')}>
       <div className="bg-[var(--primary-blue)] h-13 border-b border-white/20  ">
         <Container className="flex items-center justify-between h-full">
-          <h2 className="text-white">
-            Welcome to Clicon online eCommerce store.
-          </h2>
+          <h2 className="text-white">{t('general.welcome')}</h2>
           <div className="flex items-center gap-2 text-white">
             <div className="flex items-center">
-              <span className="text-sm">Follow us:</span>
+              <span className="text-sm">{t('general.followUs')}</span>
               <div className="flex items-center">
                 {socials.map((social) => (
                   <Link
@@ -59,7 +57,7 @@ const Header: React.FC<Props> = ({ className }) => {
           <div className="relative w-[650px] h-12 bg-white">
             <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-black w-5 h-5 cursor-pointer" />
             <Input
-              placeholder={t('headerSearch')}
+              placeholder={t('input.headerSearch')}
               className="w-full h-full bg-white border-0 rounded-none focus-visible:none"
             />
           </div>

@@ -13,7 +13,7 @@ interface Props {
   className?: string;
 }
 
-const CurrencySwitcher: React.FC<Props> = ({ className }) => {
+const CurrencySwitcher: React.FC<Props> = () => {
   const [value, setValue] = useState('USD');
   return (
     <Select value={value} onValueChange={setValue}>
@@ -29,8 +29,11 @@ const CurrencySwitcher: React.FC<Props> = ({ className }) => {
             <SelectItem
               key={cur.code}
               value={cur.code}
+              colorIcon={cur.code === value ? 'var(--primary-orange)' : ''}
               className={
-                cur.code === value ? 'text-[var(--primary-orange)]' : ''
+                cur.code === value
+                  ? '!text-[var(--primary-orange)] hover:!text-[var(--primary-orange)] focus:!text-[var(--primary-orange)]'
+                  : ''
               }
             >
               {cur.label}

@@ -103,6 +103,7 @@ function SelectLabel({
 function SelectItem({
   className,
   children,
+  colorIcon,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Item>) {
   return (
@@ -116,7 +117,10 @@ function SelectItem({
     >
       <span className="absolute right-2 flex size-3.5 items-center justify-center">
         <SelectPrimitive.ItemIndicator>
-          <CheckIcon className="size-4" />
+          <CheckIcon
+            className="size-4"
+            style={colorIcon ? { color: colorIcon } : undefined}
+          />
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>

@@ -1,4 +1,12 @@
 {
+  "general": {
+    "welcome": "Welcome to Clicon online eCommerce store.",
+    "followUs": "Follow us:"
+  },
+  "locales": {
+    "en": "English",
+    "ru": "Russian"
+  },
   "input": {
     "headerSearch": "Search for anything..."
   }
