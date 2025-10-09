@@ -1,9 +1,10 @@
 'use client';
-import { routing } from '@/i18n/routing';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
+import { locales } from '@/constants';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { Locale } from 'next-intl';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { useTransition } from 'react';
 import {
@@ -12,11 +13,11 @@ import {
   SelectGroup,
   SelectItem,
   SelectTrigger,
-  SelectValue,
 } from '../ui/index';
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
+  const t = useTranslations();
 
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
@@ -36,18 +37,37 @@ export default function LocaleSwitcher() {
   }
 
   return (
-    <Select defaultValue={locale} onValueChange={onSelectChange}>
+    <Select value={locale} onValueChange={onSelectChange}>
       <SelectTrigger
+        value={locale}
         className="shadow-none border-0 bg-transparent p-0"
-        disabled={isPending}
       >
-        <SelectValue />
+        <span className="uppercase font-medium text-sm">{locale}</span>
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          {routing.locales.map((cur) => (
-            <SelectItem disabled={isPending} key={cur} value={cur}>
-              {cur}
+          {locales.map((cur) => (
+            <SelectItem
+              colorIcon={
+                cur.code === locale ? 'text-[var(--primary-orange)]' : ''
+              }
+              className={
+                cur.code === locale
+                  ? '!text-[var(--primary-orange)] hover:!text-[var(--primary-orange)] focus:!text-[var(--primary-orange)]'
+                  : ''
+              }
+              disabled={isPending}
+              key={cur.code}
+              value={cur.code}
+            >
+              <Image
+                src={cur.icon}
+                alt={cur.code}
+                width={20}
+                height={20}
+                className="rounded-full w-5 h-5 object-cover"
+              />
+              {t(cur.label)}
             </SelectItem>
           ))}
         </SelectGroup>
