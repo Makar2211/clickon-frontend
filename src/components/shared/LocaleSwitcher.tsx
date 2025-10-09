@@ -60,7 +60,13 @@ export default function LocaleSwitcher() {
               key={cur.code}
               value={cur.code}
             >
-              <Image src={cur.icon} alt={cur.code} width={20} height={20} />
+              <Image
+                src={cur.icon}
+                alt={cur.code}
+                width={20}
+                height={20}
+                className="rounded-full w-5 h-5 object-cover"
+              />
               {t(cur.label)}
             </SelectItem>
           ))}
