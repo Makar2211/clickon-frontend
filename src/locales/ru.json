@@ -9,5 +9,24 @@
   },
   "input": {
     "headerSearch": "Ищите что угодно..."
+  },
+  "error": {
+    "invalid_name": "Имя должно содержать более 2 символов.",
+    "invalid_email": "Пожалуйста, введите корректный адрес электронной почты.",
+    "invalid_password": "Пароль должен быть не менее 8 символов.",
+    "invalid_confirm_password": "Пароль должен быть не менее 8 символов.",
+    "passwords_do_not_match": "Пароли не совпадают.",
+    "terms_must_be_accepted": "Вы должны принять условия использования."
+  },
+  "auth": {
+    "signIn": "Войти",
+    "signUp": "Регистрация",
+    "or": "или",
+    "signInWithGoogle": "Войти через Google",
+    "signInWithApple": "Войти через Apple",
+    "name": "Имя",
+    "email": "Адрес электронной почты",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль"
   }
 }

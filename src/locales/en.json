@@ -9,5 +9,24 @@
   },
   "input": {
     "headerSearch": "Search for anything..."
+  },
+  "error": {
+    "invalid_name": "The name must contain more than 2 characters.",
+    "invalid_email": "Please enter a valid email address.",
+    "invalid_password": "The password must be at least 8 characters long.",
+    "invalid_confirm_password": "The password must be at least 8 characters long.",
+    "passwords_do_not_match": "Passwords do not match.",
+    "terms_must_be_accepted": "You must accept the terms and conditions."
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "or": "or",
+    "signInWithGoogle": "Sign in with Google",
+    "signInWithApple": "Sign in with Apple",
+    "name": "Name",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password"
   }
 }

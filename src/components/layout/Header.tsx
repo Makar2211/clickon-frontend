@@ -2,7 +2,7 @@
 import { socials } from '@/constants';
 import { cn } from '@/lib/utils';
 import { Heart, Search, ShoppingCart, UserRound } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -14,6 +14,7 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ className }) => {
+  const locale = useLocale();
   const t = useTranslations();
   return (
     <header className={cn(className, 'bg-[var(--primary-blue)]')}>
@@ -51,7 +52,7 @@ const Header: React.FC<Props> = ({ className }) => {
       </div>
       <div className="bg-[var(--primary-blue)] h-[88px]">
         <Container className="flex items-center h-full justify-between">
-          <Link href="/">
+          <Link href={`/${locale}`} className="block">
             <Image src="/logo.svg" alt="Logo" width={177} height={48} />
           </Link>
           <div className="relative w-[650px] h-12 bg-white">
@@ -63,19 +64,19 @@ const Header: React.FC<Props> = ({ className }) => {
           </div>
 
           <div className="flex items-center gap-6">
-            <Link href="/cart" className="relative">
+            <Link href={`/${locale}/cart`} className="relative">
               <ShoppingCart className="text-white" />
               <Badge className="absolute top-[-4px] right-[-5px] bg-white text-[var(--primary-blue)] h-4 min-w-4 rounded-full px-1 font-mono tabular-nums">
                 0
               </Badge>
             </Link>
-            <Link href="/favorites" className="relative ">
+            <Link href={`/${locale}/favorites`} className="relative ">
               <Heart className="text-white" />
               <Badge className="absolute top-[-4px] right-[-5px] bg-white text-[var(--primary-blue)] h-4 min-w-4 rounded-full px-1 font-mono tabular-nums">
                 0
               </Badge>
             </Link>
-            <Link href="/profile" className="relative">
+            <Link href={`/${locale}/profile`} className="relative">
               <UserRound className="text-white" />
             </Link>
           </div>
